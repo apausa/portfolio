@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import type p5 from 'p5';
-import asciiOrb from '@/lib/asciiOrb';
+import { asciiOrb } from '@/lib/asciiOrb';
 
 export default function P5Sketch() {
   const containerRef = useRef<HTMLDivElement>(null);
