@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import type p5 from 'p5';
-import { ellipseSketch } from '../lib/ellipseSketch';
+import asciiOrb from '@/lib/asciiOrb';
 
 export default function P5Sketch() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -13,7 +13,7 @@ export default function P5Sketch() {
 
     (async () => {
       const P5 = (await import('p5')).default;
-      p5Instance.current = new P5(ellipseSketch, containerRef.current!);
+      p5Instance.current = new P5(asciiOrb, containerRef.current!);
     })();
 
     return () => {
