@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Geist, Geist_Mono } from 'next/font/google';
 
-import { ThemeProvider } from '@/lib/theme-provider';
+import ThemeProvider from '@/lib/theme-provider';
 
 import './globals.css';
 
