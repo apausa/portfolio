@@ -74,7 +74,7 @@ export const asciiOrb = (p: p5) => {
     // Update time for animation (slower)
     time += 0.008;
     
-    p.background(0);
+    p.clear();
     p.textAlign(p.CENTER, p.CENTER);
     p.textSize(charSize);
     p.textFont('monospace');
@@ -116,7 +116,7 @@ export const asciiOrb = (p: p5) => {
           const charIndex = Math.min(Math.floor(characterIntensity * orbChars.length), orbChars.length - 1);
           const char = orbChars[charIndex];
           
-          p.fill('#10069F');
+          p.fill('#CCC');
           p.text(char, x + charSize/2, y + charSize/2);
         }
       }
