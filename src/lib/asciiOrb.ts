@@ -119,7 +119,7 @@ const asciiOrb = (p: p5): void => {
           const charIndex = Math.min(Math.floor(characterIntensity * orbChars.length), orbChars.length - 1);
           const char = orbChars[charIndex];
 
-          p.fill('#CCC');
+          p.fill('#10069F');
           p.text(char, x + charSize / 2, y + charSize / 2);
         }
       }

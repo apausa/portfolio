@@ -28,11 +28,15 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>): Reac
       ${geistSans.variable}
       ${geistMono.variable}
       antialiased
-      h-screen
+      gap-8
       flex
       flex-col
       items-center
       justify-center
+      h-screen
+      max-w-lg
+      mx-4
+      xs:mx-auto
     `}>
       <ThemeProvider
         disableTransitionOnChange
@@ -47,3 +51,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>): Reac
 );
 
 export default RootLayout;
+
+/*
+
+*/
