@@ -1,10 +1,15 @@
+/* eslint-disable consistent-return */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import type p5 from 'p5';
-import { asciiOrb } from '@/lib/asciiOrb';
 
-export default function P5Sketch() {
+import asciiOrb from '@/lib/asciiOrb';
+
+import type p5 from 'p5';
+
+const P5Sketch = (): React.ReactElement => {
   const containerRef = useRef<HTMLDivElement>(null);
   const p5Instance = useRef<p5 | null>(null);
 
@@ -30,7 +35,9 @@ export default function P5Sketch() {
       left: 0,
       width: '100vw',
       height: '100vh',
-      zIndex: -1
-    }
+      zIndex: -1,
+    },
   });
-}
+};
+
+export default P5Sketch;

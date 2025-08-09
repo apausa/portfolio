@@ -1,17 +1,15 @@
-import P5Sketch from "../components/Sketch";
+import React from 'react';
 
-export default function Home() {
-  return (
-    <>
+import P5Sketch from '@/components/Background';
+import Header from '@/components/Header';
+import Main from '@/components/Main';
+
+const Home: React.FC = () => (
+    <React.Fragment>
       <P5Sketch/>
-      <main className="min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-4xl text-white text-center">
-          Work in progress
-        </h1>
-        <h2 className="text-2xl text-white text-center">
-          Come back later!
-        </h2>
-      </main>
-    </>
-  );
-}
+      <Header/>
+      <Main/>
+    </React.Fragment>
+);
+
+export default Home;
