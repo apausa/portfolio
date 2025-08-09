@@ -16,7 +16,7 @@ const Main = (): React.ReactElement => (
         className="w-full h-12"
         variant="outline"
       >
-        <Link href="mailto:pablo@apausa.dev" target="_blank">
+        <Link href="mailto:pablo@apausa.dev">
           <IconMailFilled />
           Mail
         </Link>
