@@ -58,6 +58,10 @@ const typescriptConfig = [
 export default [
   // Ignore .gitignore files/folder in eslint
   includeIgnoreFile(gitignorePath),
+  // Ignore components/ui directory
+  {
+    ignores: ['src/components/ui/**'],
+  },
   // Javascript Config
   ...jsConfig,
   // Next Config
