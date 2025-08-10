@@ -82,6 +82,7 @@ const customRules = [
       "react/function-component-definition": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "no-plusplus": "off",
+      "react/jsx-fragments": "off",
     },
   },
 ];

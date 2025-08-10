@@ -3,18 +3,23 @@
 import P5Sketch from "@/components/home/Background";
 import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
-import { About } from "@/components/home/main/About";
+import About from "@/components/home/main/About";
+import Links from "@/components/home/main/Links";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center w-full h-full">
+    <>
       <P5Sketch />
       <Header />
-      <Separator className="w-3/4 my-8" />
-      <About />
-      <Separator className="w-3/4 my-8" />
+      <main className="flex flex-col gap-4 w-full">
+        <Separator />
+        <About />
+        <Separator />
+        <Links />
+        <Separator />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

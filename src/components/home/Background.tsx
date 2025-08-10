@@ -5,7 +5,7 @@
 
 import React, { useEffect, useRef } from "react";
 
-import asciiOrb from "@/lib/asciiOrb";
+import asciiOrb from "@/lib/sketches/asciiOrb";
 
 import type p5 from "p5";
 
