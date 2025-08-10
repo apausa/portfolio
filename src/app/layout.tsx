@@ -27,15 +27,9 @@ export default function RootLayout({
         className={`
         ${montserrat.variable}
         antialiased
-        gap-4
         flex
         flex-col
-        items-center
-        justify-center
-        h-screen
-        max-w-lg
-        mx-4
-        xs:mx-auto
+        xs:flex-row
       `}
       >
         <ThemeProvider
