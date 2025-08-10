@@ -18,8 +18,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  blog,
 }: Readonly<{
   children: React.ReactNode;
+  blog: React.ReactNode;
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
@@ -27,15 +30,9 @@ export default function RootLayout({
         className={`
         ${montserrat.variable}
         antialiased
-        gap-4
         flex
         flex-col
-        items-center
-        justify-center
-        h-screen
-        max-w-lg
-        mx-4
-        xs:mx-auto
+        xs:flex-row
       `}
       >
         <ThemeProvider

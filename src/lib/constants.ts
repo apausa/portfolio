@@ -5,10 +5,10 @@ import {
 } from "@tabler/icons-react";
 
 export const heading =
-  "Software Engineer and Designer — Artificial Intelligence at Technical University of Madrid";
+  "Currently studying Artificial Intelligence and building dozens of small projects";
 
 export const about =
-  "As a dual degree graduate in Software Development and Digital Design, I have a holistic perspective that covers both technical and creative domains.";
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
 export const links = [
   {
@@ -29,7 +29,7 @@ export const links = [
 ];
 
 export const facts = [
-  "Building a high-energy physics simulation dashboard for ALICE researchers",
-  "Having a dual degree in arts and science",
-  "CERN alumni, Nova member, indie maker, python enthusiast",
+  "Developing a particle physics simulations app for ALICE researchers",
+  "Being a dual degree graduate in arts and engineering",
+  "CERN alumni, Nova member, indie maker circles, python",
 ];
