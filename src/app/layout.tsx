@@ -18,8 +18,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  blog,
 }: Readonly<{
   children: React.ReactNode;
+  blog: React.ReactNode;
 }>) {
   return (
     <html suppressHydrationWarning lang="en">

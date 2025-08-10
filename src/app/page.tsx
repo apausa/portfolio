@@ -4,7 +4,6 @@ import P5Sketch from "@/components/home/Background";
 import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
 import About from "@/components/home/main/About";
-import Facts from "@/components/home/main/Facts";
 import Links from "@/components/home/main/Links";
 import { Separator } from "@/components/ui/separator";
 
