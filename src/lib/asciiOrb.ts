@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-shadow */
-/* eslint-disable no-plusplus */
-/* eslint-disable @stylistic/max-len */
-import type p5 from 'p5';
+/* eslint-disable no-param-reassign */
+
+import type p5 from "p5";
 
 const asciiOrb = (p: p5): void => {
-  const orbChars = [' ', '·', ':', '-', '=', '+', '*', '#'];
+  const orbChars = [" ", "·", ":", "-", "=", "+", "*", "#"];
   let orbRadius: number;
   let charSize: number;
   let rows: number;
@@ -58,7 +57,9 @@ const asciiOrb = (p: p5): void => {
     const vectorY = lightY - dy;
     const vectorZ = lightZ - z;
 
-    const lightDistance = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
+    const lightDistance = Math.sqrt(
+      vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ,
+    );
 
     // Normalize light direction
     const distanceX = vectorX / lightDistance;
@@ -66,7 +67,8 @@ const asciiOrb = (p: p5): void => {
     const distanceZ = vectorZ / lightDistance;
 
     // Calculate dot product for lighting intensity
-    const dotProduct = (normalX * distanceX) + (normalY * distanceY) + (normalZ * distanceZ);
+    const dotProduct =
+      normalX * distanceX + normalY * distanceY + normalZ * distanceZ;
 
     // Return lighting intensity that uses the FULL character range with minimum ambient
     return Math.max(0, dotProduct);
@@ -79,7 +81,7 @@ const asciiOrb = (p: p5): void => {
     p.clear();
     p.textAlign(p.CENTER, p.CENTER);
     p.textSize(charSize);
-    p.textFont('monospace');
+    p.textFont("monospace");
 
     const centerX = p.width / 2;
     const centerY = p.height / 2;
@@ -107,16 +109,41 @@ const asciiOrb = (p: p5): void => {
 
         if (depth >= 0) {
           // Calculate lighting intensity from both light sources
-          const light1Intensity = computeLight(x, y, centerX, centerY, orbRadius, light1X, light1Y, light1Z);
-          const light2Intensity = computeLight(x, y, centerX, centerY, orbRadius, light2X, light2Y, light2Z);
-          const characterIntensity = Math.min(1.0, light1Intensity + light2Intensity);
+          const light1Intensity = computeLight(
+            x,
+            y,
+            centerX,
+            centerY,
+            orbRadius,
+            light1X,
+            light1Y,
+            light1Z,
+          );
+          const light2Intensity = computeLight(
+            x,
+            y,
+            centerX,
+            centerY,
+            orbRadius,
+            light2X,
+            light2Y,
+            light2Z,
+          );
+          const characterIntensity = Math.min(
+            1.0,
+            light1Intensity + light2Intensity,
+          );
 
-          const safeIntensity = isNaN(characterIntensity) ? 0 : characterIntensity;
-          const charIndex = Math.min(Math.floor(safeIntensity * orbChars.length), orbChars.length - 1)
+          const safeIntensity = Number.isNaN(characterIntensity)
+            ? 0
+            : characterIntensity;
+          const charIndex = Math.min(
+            Math.floor(safeIntensity * orbChars.length),
+            orbChars.length - 1,
+          );
           const char = orbChars[charIndex] || orbChars[0]; // Fallback to first character
 
-
-          p.fill('#00f');
+          p.fill("#00f");
           p.text(char, x + charSize / 2, y + charSize / 2);
         }
       }

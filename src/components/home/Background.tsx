@@ -1,13 +1,13 @@
-/* eslint-disable consistent-return */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable consistent-return */
 
-'use client';
+"use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
-import asciiOrb from '@/lib/asciiOrb';
+import asciiOrb from "@/lib/asciiOrb";
 
-import type p5 from 'p5';
+import type p5 from "p5";
 
 const P5Sketch = (): React.ReactElement => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,7 +17,7 @@ const P5Sketch = (): React.ReactElement => {
     if (!containerRef.current) return;
 
     (async () => {
-      const P5 = (await import('p5')).default;
+      const P5 = (await import("p5")).default;
       p5Instance.current = new P5(asciiOrb, containerRef.current!);
     })();
 
@@ -27,14 +27,14 @@ const P5Sketch = (): React.ReactElement => {
     };
   }, []);
 
-  return React.createElement('div', {
+  return React.createElement("div", {
     ref: containerRef,
     style: {
-      position: 'fixed',
+      position: "fixed",
       top: 0,
       left: 0,
-      width: '100vw',
-      height: '100vh',
+      width: "100vw",
+      height: "100vh",
       zIndex: -1,
     },
   });

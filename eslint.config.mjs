@@ -79,9 +79,9 @@ const customRules = [
   {
     name: "custom/overrides",
     rules: {
-      "import-x/prefer-default-export": "off",
       "react/function-component-definition": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
+      "no-plusplus": "off",
     },
   },
 ];
@@ -99,4 +99,7 @@ export default [
   ...prettierConfig,
   // Custom rules
   ...customRules,
+  {
+    ignores: ["src/components/ui/**"],
+  },
 ];
