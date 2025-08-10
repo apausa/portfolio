@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable no-plusplus */
 /* eslint-disable @stylistic/max-len */
@@ -24,12 +23,12 @@ const asciiOrb = (p: p5): void => {
     y: number,
     centerX: number,
     centerY: number,
-    orbRadius: number,
+    radius: number,
   ): number => {
     const [dx, dy] = [x - centerX, y - centerY];
     const distance2D = Math.sqrt(dx * dx + dy * dy);
 
-    return Math.sqrt(orbRadius * orbRadius - distance2D * distance2D) / orbRadius;
+    return Math.sqrt(radius * radius - distance2D * distance2D) / radius;
   };
 
   const computeLight = (
@@ -37,7 +36,7 @@ const asciiOrb = (p: p5): void => {
     y: number,
     centerX: number,
     centerY: number,
-    orbRadius: number,
+    radius: number,
     lightX: number,
     lightY: number,
     lightZ: number,
@@ -47,12 +46,12 @@ const asciiOrb = (p: p5): void => {
     const distance2D = Math.sqrt(dx * dx + dy * dy);
 
     // Calculate the surface normal at this point
-    const z = Math.sqrt(orbRadius * orbRadius - distance2D * distance2D);
+    const z = Math.sqrt(radius * radius - distance2D * distance2D);
 
     // Normalize the surface normal vector
-    const normalX = dx / orbRadius;
-    const normalY = dy / orbRadius;
-    const normalZ = z / orbRadius;
+    const normalX = dx / radius;
+    const normalY = dy / radius;
+    const normalZ = z / radius;
 
     // Calculate light direction vector (from surface to source)
     const vectorX = lightX - dx;
@@ -75,7 +74,7 @@ const asciiOrb = (p: p5): void => {
 
   p.draw = () => {
     // Update time for animation (slower)
-    time += 0.008;
+    time += 0.01;
 
     p.clear();
     p.textAlign(p.CENTER, p.CENTER);
@@ -86,14 +85,13 @@ const asciiOrb = (p: p5): void => {
     const centerY = p.height / 2;
 
     // First light source - complex, varied movement
-    const lightRadius = orbRadius * 2;
+    const lightRadius = orbRadius;
 
     // Light 1: Multiple sine waves for organic movement
     const light1X = Math.cos(time) * lightRadius + Math.cos(time) * lightRadius;
     const light1Y = Math.sin(time) * lightRadius + Math.sin(time) * lightRadius;
-    const light1Z = Math.sin(time) * orbRadius;
+    const light1Z = Math.cos(time) * orbRadius;
 
-    // Light 2: Different movement pattern for variety
     const light2X = Math.sin(time) * lightRadius + Math.sin(time) * lightRadius;
     const light2Y = Math.cos(time) * lightRadius + Math.cos(time) * lightRadius;
     const light2Z = Math.cos(time) * orbRadius;
@@ -111,15 +109,14 @@ const asciiOrb = (p: p5): void => {
           // Calculate lighting intensity from both light sources
           const light1Intensity = computeLight(x, y, centerX, centerY, orbRadius, light1X, light1Y, light1Z);
           const light2Intensity = computeLight(x, y, centerX, centerY, orbRadius, light2X, light2Y, light2Z);
-
-          // Use ONLY lighting for character selection - no depth influence
           const characterIntensity = Math.min(1.0, light1Intensity + light2Intensity);
 
-          // Ensure we can reach the brightest character (#)
-          const charIndex = Math.min(Math.floor(characterIntensity * orbChars.length), orbChars.length - 1);
-          const char = orbChars[charIndex];
+          const safeIntensity = isNaN(characterIntensity) ? 0 : characterIntensity;
+          const charIndex = Math.min(Math.floor(safeIntensity * orbChars.length), orbChars.length - 1)
+          const char = orbChars[charIndex] || orbChars[0]; // Fallback to first character
 
-          p.fill('#10069F');
+
+          p.fill('#00f');
           p.text(char, x + charSize / 2, y + charSize / 2);
         }
       }

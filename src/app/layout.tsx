@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 
 import ThemeProvider from '@/lib/theme-provider';
 
@@ -8,27 +8,22 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 
-const geistSans = Geist({
+const montserrat = Montserrat({
   variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
   subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
   title: 'Pablo Apausa',
+  description: 'Personal website',
 };
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>): React.ReactElement => (
   <html suppressHydrationWarning lang="en">
     <body className={`
-      ${geistSans.variable}
-      ${geistMono.variable}
+      ${montserrat.variable}
       antialiased
-      gap-8
+      gap-4
       flex
       flex-col
       items-center
@@ -51,7 +46,3 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>): Reac
 );
 
 export default RootLayout;
-
-/*
-
-*/
