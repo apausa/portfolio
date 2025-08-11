@@ -124,3 +124,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+::selection {
+  background: #cf0;
+  color: #000;
+}

@@ -143,7 +143,7 @@ const asciiOrb = (p: p5): void => {
           );
           const char = orbChars[charIndex] || orbChars[0]; // Fallback to first character
 
-          p.fill("#00f");
+          p.fill("#00F");
           p.text(char, x + charSize / 2, y + charSize / 2);
         }
       }

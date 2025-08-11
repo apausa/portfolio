@@ -1,6 +1,5 @@
 "use client";
 
-import P5Sketch from "@/components/home/Background";
 import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
 import About from "@/components/home/main/About";
@@ -11,17 +10,20 @@ export default function Home() {
   return (
     <div
       className="
+      w-full
+      xs:w-1/2
+
+      xs:h-dvh
+      xs:justify-center
+      xs:max-w-lg
+      xs:mx-auto
+
       flex
       flex-col
       gap-4
-      m-4
-      xs:max-w-lg
-      xs:mx-auto
-      xs:h-dvh
-      xs:justify-center
+      p-4
       "
     >
-      <P5Sketch />
       <Header />
       <main className="flex flex-col gap-4 w-full">
         <Separator />
