@@ -37,9 +37,9 @@ export default function RootLayout({
       >
         <ThemeProvider
           disableTransitionOnChange
-          enableSystem
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
+          enableSystem={false}
         >
           <P5Sketch />
           {children}
