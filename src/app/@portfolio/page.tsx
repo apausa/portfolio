@@ -7,7 +7,9 @@ export default function Portfolio() {
       w-full
       xs:w-1/2
       h-dvh
-      p-4
+      px-4
+      pt-4
+      pb-8
       "
     >
       <Card className="bg-input/25 h-full">
