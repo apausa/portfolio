@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { links } from "@/lib/constants";
+import { links } from "@/lib/constants/about";
 
 export default function Links() {
   return (

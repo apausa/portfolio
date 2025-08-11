@@ -1,6 +1,6 @@
 "use client";
 
-import { heading } from "@/lib/constants";
+import { heading } from "@/lib/constants/about";
 
 export default function Header() {
   return (

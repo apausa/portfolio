@@ -5,9 +5,9 @@ import {
 } from "@tabler/icons-react";
 
 export const heading =
-  "Currently studying Artificial Intelligence and building dozens of small projects";
+  "Currently studying Artificial Intelligence while building dozens of small projects!";
 
-export const about =
+export const description =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
 export const links = [
@@ -28,7 +28,7 @@ export const links = [
   },
 ];
 
-export const facts = [
+export const list = [
   "Developing a particle physics simulations app for ALICE researchers",
   "Being a dual degree graduate in arts and engineering",
   "CERN alumni, Nova member, indie maker circles, python",
