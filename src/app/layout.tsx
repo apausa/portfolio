@@ -1,5 +1,6 @@
 import { Montserrat } from "next/font/google";
 
+import P5Sketch from "@/components/home/Background";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 
 import "./globals.css";
@@ -18,14 +19,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  blog,
+  portfolio,
 }: Readonly<{
   children: React.ReactNode;
-  blog: React.ReactNode;
+  portfolio: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning data-theme="dark" lang="en">
       <body
         className={`
         ${montserrat.variable}
@@ -41,7 +41,9 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
         >
+          <P5Sketch />
           {children}
+          {portfolio}
         </ThemeProvider>
       </body>
     </html>
