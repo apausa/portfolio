@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { Montserrat } from "next/font/google";
 
 import P5Sketch from "@/components/home/Background";
@@ -41,6 +42,7 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem={false}
         >
+          <Analytics />
           <P5Sketch />
           {children}
           {portfolio}
