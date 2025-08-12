@@ -7,7 +7,7 @@ import type { SpotifyBackResponse } from "@/lib/types/api";
 // Initialize Redis
 const redis = Redis.fromEnv();
 
-export async function refreshToken() {
+async function refreshToken() {
   const params = new URLSearchParams();
   params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
   params.append("grant_type", "authorization_code");
