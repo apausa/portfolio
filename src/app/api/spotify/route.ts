@@ -9,10 +9,12 @@ import type { SpotifySong, SpotifyToken } from "@/lib/types/api";
 const redis = Redis.fromEnv();
 
 async function getRefreshToken() {
+  // Get refresh token from Redis
   const refreshToken: string | null = await redis.get("spotify:refresh");
 
   if (!refreshToken) throw new Error("Failed to retrieve the refresh token");
 
+  // Regenerate access token
   const params = new URLSearchParams();
   params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
   params.append("grant_type", "refresh_token");
@@ -34,6 +36,7 @@ async function getRefreshToken() {
 
   const data: SpotifyToken = await response.json();
 
+  // Update refresh and access tokens in Redis
   await redis.set("spotify:refresh", data.refresh_token);
   await redis.set("spotify:access", data.access_token);
 
