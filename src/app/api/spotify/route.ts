@@ -9,12 +9,17 @@ import type { SpotifySong, SpotifyToken } from "@/lib/types/api";
 const redis = Redis.fromEnv();
 
 async function refreshToken(token: string) {
+  /* At first:
+   * - In "grant_type", replace "authorization_code" for "refresh_token"
+   * - Replace "refresh_token" for "code", with "process.env.SPOTIFY_FIRST_CODE!"
+   * - Add 'params.append("redirect_uri", "http://127.0.0.1:3000");'
+   * - Add 'params.append("code_verifier", process.env.SPOTIFY_FIRST_VERIFIER!);'
+   * - Replace data.access_token for data.refresh_token in Redis */
+
   const params = new URLSearchParams();
   params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
-  params.append("grant_type", "authorization_code");
-  params.append("code", token);
-  params.append("redirect_uri", "http://127.0.0.1:3000");
-  params.append("code_verifier", process.env.SPOTIFY_CLIENT_VERIFIER!);
+  params.append("grant_type", "refresh_token");
+  params.append("refresh_token", token);
 
   const response = await fetch(SPOTIFY_URL_TOKEN, {
     method: "POST",
@@ -26,7 +31,7 @@ async function refreshToken(token: string) {
 
   const data: SpotifyToken = await response.json();
 
-  await redis.set("spotify:token", data.access_token);
+  await redis.set("spotify:token", data.refresh_token);
 
   return data.access_token;
 }
@@ -47,7 +52,6 @@ async function getSong(token: string) {
 
 export async function GET() {
   try {
-    // At first, refreshToken(process.env.SPOTIFY_FIRST_CODE!);
     let token: string = await getToken();
     let response = await getSong(token);
 
