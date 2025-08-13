@@ -8,7 +8,7 @@ export const heading =
   "Currently studying Artificial Intelligence while building dozens of small projects!";
 
 export const description =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+  "As a dual degree graduate in Software Development and Digital Design I have a holistic perspective that covers both technical and creative domains.";
 
 export const links = [
   {
