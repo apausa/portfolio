@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
 import { IconBrandSpotifyFilled, IconMapPinFilled } from "@tabler/icons-react";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
-import type { SpotifyFrontResponse } from "@/lib/types/home";
+import type { SpotifyResponse } from "@/lib/types/home";
 
 export default function Footer() {
-  const [recentlyPlayed, setRecentlyPlayed] = useState<SpotifyFrontResponse>();
+  const [recentlyPlayed, setRecentlyPlayed] = useState<SpotifyResponse>({
+    error: "Loading song...",
+  });
 
   const fetchRecentlyPlayed = async () => {
     const response = await axios.get("/api/spotify");
@@ -37,16 +39,16 @@ export default function Footer() {
         <IconBrandSpotifyFilled className="w-4 h-4" />
         <p>
           Last played —{" "}
-          {recentlyPlayed && "error" in recentlyPlayed ? (
+          {"error" in recentlyPlayed ? (
             <span>{recentlyPlayed.error}</span>
           ) : (
             <a
               className="no-underline hover:underline"
-              href={recentlyPlayed?.spotify}
+              href={recentlyPlayed?.link}
               rel="noreferrer"
               target="_blank"
             >
-              {recentlyPlayed?.name ?? "Loading..."}
+              {recentlyPlayed?.name}, by {recentlyPlayed?.artists.join(", ")}
             </a>
           )}
         </p>
