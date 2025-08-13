@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { IconBrandSpotifyFilled, IconMapPinFilled } from "@tabler/icons-react";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 import type { SpotifyResponse } from "@/lib/types/home";
 
