@@ -2,79 +2,73 @@
 import { Redis } from "@upstash/redis";
 import { NextResponse } from "next/server";
 
-import type { SpotifyBackResponse } from "@/lib/types/api";
+import { SPOTIFY_URL_PLAYER, SPOTIFY_URL_TOKEN } from "@/lib/constants/api";
 
-// Initialize Redis
+import type { SpotifySong, SpotifyToken } from "@/lib/types/api";
+
 const redis = Redis.fromEnv();
 
-async function refreshToken() {
+async function refreshToken(token: string) {
   const params = new URLSearchParams();
   params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
   params.append("grant_type", "authorization_code");
-  params.append("code", process.env.SPOTIFY_CLIENT_CODE!);
+  params.append("code", token);
   params.append("redirect_uri", "http://127.0.0.1:3000");
   params.append("code_verifier", process.env.SPOTIFY_CLIENT_VERIFIER!);
 
-  const response = await fetch("https://accounts.spotify.com/api/token", {
+  const response = await fetch(SPOTIFY_URL_TOKEN, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: params,
   });
 
-  if (!response.ok)
-    throw new Error(
-      `Could not refresh token ${response.status} ${response.statusText}`,
-    );
+  if (!response.ok) throw new Error("Failed to refresh token");
 
-  const data = await response.json();
+  const data: SpotifyToken = await response.json();
 
-  await redis.set("spotify_token", data.access_token);
+  await redis.set("spotify:token", data.access_token);
+
+  return data.access_token;
 }
 
-async function fetchSpotifyData(token: string): Promise<Response> {
-  return fetch("https://api.spotify.com/v1/me/player/recently-played?limit=1", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
+async function getToken(): Promise<string> {
+  const token: string | null = await redis.get("spotify:token");
+
+  if (!token) throw new Error("Failed to retrieve token");
+
+  return token;
+}
+
+async function getSong(token: string) {
+  return fetch(SPOTIFY_URL_PLAYER, {
+    headers: { Authorization: `Bearer ${token}` },
   });
 }
 
 export async function GET() {
   try {
-    let token = await redis.get("spotify_token");
+    // At first, refreshToken(process.env.SPOTIFY_FIRST_CODE!);
+    let token: string = await getToken();
+    let response = await getSong(token);
 
-    // if (!token) {
-    //   throw new Error("No Spotify token available");
-    // }
-
-    let response = await fetchSpotifyData(token as string);
-
-    // Handle token refresh only once
     if (response.status === 401) {
-      await refreshToken();
-      token = await redis.get("spotify_token");
-      response = await fetchSpotifyData(token as string);
+      token = await refreshToken(token);
+      response = await getSong(token);
     }
 
-    if (!response.ok) {
-      throw new Error(
-        `Could not retrieve song ${response.status} ${response.statusText}`,
-      );
-    }
+    if (!response.ok) throw new Error("Failed to retrieve song");
 
-    const data: SpotifyBackResponse = await response.json();
+    const data: SpotifySong = await response.json();
 
-    const {
-      track: {
-        external_urls: { spotify },
-        name,
-      },
-    } = data.items[0];
-
-    return NextResponse.json({ spotify, name });
+    return NextResponse.json({
+      artists: data.items[0].track.artists.map((artist) => artist.name),
+      image: data.items[0].track.album.images[0].url,
+      link: data.items[0].track.external_urls.spotify,
+      name: data.items[0].track.name,
+    });
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Unknown error occurred";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
   }
 }

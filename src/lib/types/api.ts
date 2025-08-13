@@ -1,5 +1,3 @@
-// Spotify API Types
-
 interface SpotifyImage {
   url: string;
   height: number;
@@ -11,9 +9,9 @@ interface SpotifyExternalUrls {
 }
 
 interface SpotifyExternalIds {
-  isrc?: string;
-  ean?: string;
-  upc?: string;
+  isrc: string;
+  ean: string;
+  upc: string;
 }
 
 interface SpotifyArtist {
@@ -71,7 +69,7 @@ interface SpotifyContext {
 interface SpotifyPlayHistoryItem {
   track: SpotifyTrack;
   played_at: string;
-  context: SpotifyContext | null;
+  context: SpotifyContext;
 }
 
 interface SpotifyCursors {
@@ -79,10 +77,16 @@ interface SpotifyCursors {
   before: string;
 }
 
-export interface SpotifyBackResponse {
+export interface SpotifySong {
   href: string;
   limit: number;
   next: string | null;
   cursors: SpotifyCursors;
   items: SpotifyPlayHistoryItem[];
+}
+
+export interface SpotifyToken {
+  access_token: string;
+  token_type: string;
+  expires_in: number;
 }

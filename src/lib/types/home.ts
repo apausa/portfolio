@@ -1,10 +1,12 @@
-interface SuccessResponse {
-  spotify: string;
+export interface SpotifySong {
+  link: string;
   name: string;
+  image: string;
+  artists: string[];
 }
 
-interface ErrorResponse {
+export interface SpotifyError {
   error: string;
 }
 
-export type SpotifyFrontResponse = SuccessResponse | ErrorResponse;
+export type SpotifyResponse = SpotifySong | SpotifyError;
