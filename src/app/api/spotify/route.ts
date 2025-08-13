@@ -8,17 +8,21 @@ import type { SpotifySong, SpotifyToken } from "@/lib/types/api";
 
 const redis = Redis.fromEnv();
 
-async function refreshToken(token: string) {
+async function getRefreshToken() {
+  const refreshToken: string | null = await redis.get("spotify:refresh");
+
+  if (!refreshToken) throw new Error("Failed to retrieve the refresh token");
+
+  const params = new URLSearchParams();
+  params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
+  params.append("grant_type", "refresh_token");
+  params.append("refresh_token", refreshToken);
+
   /* At first:
    * - In "grant_type", replace "refresh_token" for "authorization_code"
    * - Replace "refresh_token" for "code", with "process.env.SPOTIFY_FIRST_TOKEN!"
    * - Add 'params.append("redirect_uri", "http://127.0.0.1:3000");'
    * - Add 'params.append("code_verifier", process.env.SPOTIFY_FIRST_VERIFIER!);' */
-
-  const params = new URLSearchParams();
-  params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
-  params.append("grant_type", "refresh_token");
-  params.append("refresh_token", token);
 
   const response = await fetch(SPOTIFY_URL_TOKEN, {
     method: "POST",
@@ -26,21 +30,14 @@ async function refreshToken(token: string) {
     body: params,
   });
 
-  if (!response.ok) throw new Error("Failed to refresh token");
+  if (!response.ok) throw new Error("Failed to refresh the access token");
 
   const data: SpotifyToken = await response.json();
 
-  await redis.set("spotify:token", data.refresh_token);
+  await redis.set("spotify:refresh", data.refresh_token);
+  await redis.set("spotify:access", data.access_token);
 
   return data.access_token;
-}
-
-async function getToken(): Promise<string> {
-  const token: string | null = await redis.get("spotify:token");
-
-  if (!token) throw new Error("Failed to retrieve token");
-
-  return token;
 }
 
 async function getSong(token: string) {
@@ -49,14 +46,22 @@ async function getSong(token: string) {
   });
 }
 
+async function getAccessToken(): Promise<string> {
+  const token: string | null = await redis.get("spotify:access");
+
+  if (!token) throw new Error("Failed to retrieve the access token");
+
+  return token;
+}
+
 export async function GET() {
   try {
-    let token: string = await getToken();
-    let response = await getSong(token);
+    let accessToken: string = await getAccessToken();
+    let response = await getSong(accessToken);
 
     if (response.status === 401) {
-      token = await refreshToken(token);
-      response = await getSong(token);
+      accessToken = await getRefreshToken();
+      response = await getSong(accessToken);
     }
 
     if (!response.ok) throw new Error("Failed to retrieve song");
