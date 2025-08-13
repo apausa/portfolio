@@ -48,7 +48,7 @@ export default function Footer() {
               rel="noreferrer"
               target="_blank"
             >
-              {recentlyPlayed?.name}, by {recentlyPlayed?.artists.join(", ")}
+              {recentlyPlayed?.name}
             </a>
           )}
         </p>
