@@ -10,11 +10,10 @@ const redis = Redis.fromEnv();
 
 async function refreshToken(token: string) {
   /* At first:
-   * - In "grant_type", replace "authorization_code" for "refresh_token"
-   * - Replace "refresh_token" for "code", with "process.env.SPOTIFY_FIRST_CODE!"
+   * - In "grant_type", replace "refresh_token" for "authorization_code"
+   * - Replace "refresh_token" for "code", with "process.env.SPOTIFY_FIRST_TOKEN!"
    * - Add 'params.append("redirect_uri", "http://127.0.0.1:3000");'
-   * - Add 'params.append("code_verifier", process.env.SPOTIFY_FIRST_VERIFIER!);'
-   * - Replace data.access_token for data.refresh_token in Redis */
+   * - Add 'params.append("code_verifier", process.env.SPOTIFY_FIRST_VERIFIER!);' */
 
   const params = new URLSearchParams();
   params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
