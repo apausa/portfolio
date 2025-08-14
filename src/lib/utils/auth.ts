@@ -27,7 +27,7 @@
 //   const params = new URLSearchParams();
 //   params.append("client_id", process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID!);
 //   params.append("response_type", "code");
-//   params.append("redirect_uri", "http://127.0.0.1:3000");
+//   params.append("redirect_uri", "https://www.apausa.dev/");
 //   params.append("scope", "user-read-recently-played");
 //   params.append("code_challenge_method", "S256");
 //   params.append("code_challenge", challenge);
