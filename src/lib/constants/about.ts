@@ -8,7 +8,7 @@ export const heading =
   "Currently studying Artificial Intelligence while building dozens of small projects!";
 
 export const description =
-  "As a dual degree graduate in Software Development and Digital Design I have a holistic perspective that covers both technical and creative domains.";
+  "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.";
 
 export const links = [
   {
@@ -29,7 +29,7 @@ export const links = [
 ];
 
 export const list = [
-  "Developing a particle physics simulations app for ALICE researchers",
-  "Being a dual degree graduate in arts and engineering",
-  "CERN alumni, Nova member, indie maker circles, python",
+  "Pulvinar vivamus fringilla lacus nec metus bibendum egestas.",
+  "Iaculis massa nisl malesuada lacinia integer nunc posuere.",
+  "Ut hendrerit semper vel class aptent taciti sociosqu.",
 ];

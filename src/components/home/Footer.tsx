@@ -20,7 +20,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2">
       <div className="flex items-center gap-2">
         <IconMapPinFilled className="w-4 h-4" />
         <p>
@@ -53,6 +53,6 @@ export default function Footer() {
           )}
         </p>
       </div>
-    </footer>
+    </div>
   );
 }

@@ -12,7 +12,7 @@ const asciiOrb = (p: p5): void => {
 
   const computeDimension = () => {
     orbRadius = Math.min(p.width, p.height) * 0.5;
-    charSize = 16;
+    charSize = 32;
     rows = Math.floor(p.height / charSize);
     cols = Math.floor(p.width / charSize);
   };
@@ -143,7 +143,7 @@ const asciiOrb = (p: p5): void => {
           );
           const char = orbChars[charIndex] || orbChars[0]; // Fallback to first character
 
-          p.fill("#00F");
+          p.fill("#10069f");
           p.text(char, x + charSize / 2, y + charSize / 2);
         }
       }

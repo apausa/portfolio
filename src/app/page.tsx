@@ -1,10 +1,10 @@
 "use client";
 
+import About from "@/components/home/About";
+import Things from "@/components/home/Facts";
 import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
-import About from "@/components/home/main/About";
-import Things from "@/components/home/main/Facts";
-import Links from "@/components/home/main/Links";
+import Links from "@/components/home/Links";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
 
       xs:h-dvh
       xs:justify-center
-      xs:max-w-lg
+      xs:max-w-xl
       xs:mx-auto
 
       flex
@@ -25,15 +25,12 @@ export default function Home() {
       "
     >
       <Header />
-      <main className="flex flex-col gap-4 w-full">
-        <Separator />
-        <About />
-        <Separator />
-        <Links />
-        <Separator />
-        <Things />
-        <Separator />
-      </main>
+      <Separator />
+      <About />
+      <Separator />
+      <Links />
+      <Things />
+      <Separator />
       <Footer />
     </div>
   );

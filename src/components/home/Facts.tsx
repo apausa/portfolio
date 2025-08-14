@@ -3,14 +3,14 @@ import { list } from "@/lib/constants/about";
 
 export default function Things() {
   return (
-    <Card className="flex flex-col gap-2 bg-input/30">
-      <CardHeader>
-        <CardTitle className="text-lg font-bold">
+    <Card className="flex flex-col gap-2 bg-0 p-4">
+      <CardHeader className="p-0 m-0">
+        <CardTitle className="text-lg font-semibold p-0 m-0">
           Relevant things I&apos;ve done
         </CardTitle>
       </CardHeader>
-      <CardContent>
-        <ul className="flex flex-col gap-2 ml-4 list-disc">
+      <CardContent className="p-0 m-0">
+        <ul className="list-disc list-inside">
           {list.map((item) => (
             <li key={item}>{item}</li>
           ))}
