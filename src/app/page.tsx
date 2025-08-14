@@ -29,7 +29,6 @@ export default function Home() {
       <About />
       <Separator />
       <Links />
-      <Things />
       <Separator />
       <Footer />
     </div>
