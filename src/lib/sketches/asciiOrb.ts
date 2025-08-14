@@ -12,7 +12,7 @@ const asciiOrb = (p: p5): void => {
 
   const computeDimension = () => {
     orbRadius = Math.min(p.width, p.height) * 0.5;
-    charSize = 32;
+    charSize = 16;
     rows = Math.floor(p.height / charSize);
     cols = Math.floor(p.width / charSize);
   };

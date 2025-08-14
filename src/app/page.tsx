@@ -3,6 +3,7 @@
 import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
 import About from "@/components/home/main/About";
+import Things from "@/components/home/main/Facts";
 import Links from "@/components/home/main/Links";
 import { Separator } from "@/components/ui/separator";
 
@@ -11,7 +12,6 @@ export default function Home() {
     <div
       className="
       w-full
-      xs:w-1/2
 
       xs:h-dvh
       xs:justify-center
@@ -30,6 +30,8 @@ export default function Home() {
         <About />
         <Separator />
         <Links />
+        <Separator />
+        <Things />
         <Separator />
       </main>
       <Footer />
