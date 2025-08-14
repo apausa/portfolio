@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import { IconBrandSpotifyFilled, IconMapPinFilled } from "@tabler/icons-react";
 import axios from "axios";
 
-import getAuthorizationCode from "@/lib/utils/auth";
-
 import type { SpotifyResponse } from "@/lib/types/home";
 
 export default function Footer() {
@@ -18,7 +16,7 @@ export default function Footer() {
   };
 
   useEffect(() => {
-    getAuthorizationCode();
+    fetchRecentlyPlayed();
   }, []);
 
   return (
