@@ -14,24 +14,18 @@ async function getRefreshToken() {
 
   if (!refreshToken) throw new Error("Failed to retrieve the refresh token");
 
-  // Regenerate access token
-  // const params = new URLSearchParams();
-  // params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
-  // params.append("grant_type", "refresh_token");
-  // params.append("refresh_token", refreshToken);
-
-  /* At first:
-   * - In "grant_type", replace "refresh_token" for "authorization_code"
-   * - Replace "refresh_token" for "code", with "process.env.SPOTIFY_FIRST_TOKEN!"
-   * - Add 'params.append("redirect_uri", "http://127.0.0.1:3000");'
-   * - Add 'params.append("code_verifier", process.env.SPOTIFY_FIRST_VERIFIER!);' */
-
   const params = new URLSearchParams();
   params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
-  params.append("grant_type", "authorization_code");
-  params.append("code", process.env.SPOTIFY_FIRST_TOKEN!);
-  params.append("redirect_uri", "https://www.apausa.dev/");
-  params.append("code_verifier", process.env.SPOTIFY_FIRST_VERIFIER!);
+  params.append("grant_type", "refresh_token");
+  params.append("refresh_token", refreshToken);
+
+  // At first, no quotes in .env
+  // const params = new URLSearchParams();
+  // params.append("client_id", process.env.SPOTIFY_CLIENT_ID!);
+  // params.append("grant_type", "authorization_code");
+  // params.append("code", process.env.SPOTIFY_FIRST_TOKEN!);
+  // params.append("redirect_uri", "https://www.apausa.dev/");
+  // params.append("code_verifier", process.env.SPOTIFY_FIRST_VERIFIER!);
 
   const response = await fetch(SPOTIFY_URL_TOKEN, {
     method: "POST",
