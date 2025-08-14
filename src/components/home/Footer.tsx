@@ -20,13 +20,13 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="flex flex-col gap-2 w-full">
-      <div className="text-md text-center flex items-center gap-2">
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-2">
         <IconMapPinFilled className="w-4 h-4" />
         <p>
           Based in{" "}
           <a
-            className="no-underline hover:underline"
+            className="no-underline hover:underline hover:text-primary"
             href="https://maps.app.goo.gl/dUd1mCLUGf1VZNbu5"
             rel="noreferrer"
             target="_blank"
@@ -35,15 +35,15 @@ export default function Footer() {
           </a>
         </p>
       </div>
-      <div className="text-md text-center flex items-center gap-2">
-        <IconBrandSpotifyFilled className="w-4 h-4" />
+      <div className="flex items-center gap-2">
+        <IconBrandSpotifyFilled className="w-4" />
         <p>
           Last played —{" "}
           {"error" in recentlyPlayed ? (
             <span>{recentlyPlayed.error}</span>
           ) : (
             <a
-              className="no-underline hover:underline"
+              className="no-underline hover:underline hover:text-primary"
               href={recentlyPlayed?.link}
               rel="noreferrer"
               target="_blank"
@@ -53,6 +53,6 @@ export default function Footer() {
           )}
         </p>
       </div>
-    </footer>
+    </div>
   );
 }

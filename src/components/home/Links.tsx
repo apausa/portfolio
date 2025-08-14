@@ -7,15 +7,10 @@ export default function Links() {
   return (
     <div className="flex flex-col gap-4">
       {links.map((link) => (
-        <Button
-          key={link.name}
-          asChild
-          className="h-12 bg-input/25"
-          variant="outline"
-        >
+        <Button key={link.name} asChild className="h-12" variant="outline">
           <Link
             href={link.href}
-            target={link.name === "Mail" ? "_self" : "_blank"}
+            target={link.name === "pablo@apausa.dev" ? "_self" : "_blank"}
           >
             <link.icon />
             {link.name}
