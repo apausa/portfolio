@@ -28,13 +28,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning data-theme="dark" lang="en">
       <body
-        className={`
-        ${montserrat.variable}
-        antialiased
-        flex
-        flex-col
-        xs:flex-row
-      `}
+        className={`${montserrat.variable} antialiased flex flex-col xs:flex-row`}
       >
         <ThemeProvider
           disableTransitionOnChange
