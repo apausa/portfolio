@@ -22,7 +22,9 @@ export default function Spotify({ className }: { className: string }) {
   }, []);
 
   return (
-    <div className={cn("flex items-center gap-2 text-neutral-500", className)}>
+    <div
+      className={cn("flex items-center gap-2 text-custom-current", className)}
+    >
       <IconBrandSpotifyFilled className="w-4" />
       <p>
         Last played —{" "}
@@ -30,7 +32,7 @@ export default function Spotify({ className }: { className: string }) {
           <span>{recentlyPlayed.error}</span>
         ) : (
           <a
-            className="no-underline hover:underline hover:text-primary"
+            className="no-underline hover:underline text-custom-purple"
             href={recentlyPlayed?.link}
             rel="noreferrer"
             target="_blank"

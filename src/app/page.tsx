@@ -26,8 +26,8 @@ export default function Home() {
     >
       <div className="grid grid-cols-3 gap-4 p-4">
         <Header className="order-1 col-span-3" />
-        <Location className="order-7 xs:order-2 col-span-3 xs:col-span-1" />
-        <Spotify className="order-8 xs:order-3 col-span-3 xs:col-span-2" />
+        <Location className="order-2 col-span-3 xs:col-span-1" />
+        <Spotify className="order-3 col-span-3 xs:col-span-2 -mt-2 xs:mt-0" />
         <About className="order-4 col-span-3" />
         <Links className="order-5 col-span-3 xs:col-span-2" />
         <Images className="order-6 col-span-3 xs:col-span-1 " />
