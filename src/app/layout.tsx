@@ -34,7 +34,6 @@ export default function RootLayout({
           flex
           flex-col
           xs:flex-row
-
           bg-custom-background
           text-custom-foreground
 
