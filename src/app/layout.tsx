@@ -26,15 +26,25 @@ export default function RootLayout({
   portfolio: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning data-theme="dark" lang="en">
+    <html suppressHydrationWarning data-theme="light" lang="en">
       <body
-        className={`${montserrat.variable} antialiased flex flex-col xs:flex-row`}
+        className={`
+          ${montserrat.variable}
+          antialiased
+          flex
+          flex-col
+          xs:flex-row
+          bg-custom-background
+          text-custom-foreground
+
+          `}
       >
         <ThemeProvider
           disableTransitionOnChange
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
+          forcedTheme="dark"
         >
           <Analytics />
           <P5Sketch />

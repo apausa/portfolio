@@ -126,6 +126,19 @@
 }
 
 ::selection {
-  background: #cf0;
-  color: #000;
+  background: var(--color-custom-selection);
+}
+
+@theme {
+  --color-custom-background: #282a36;
+  --color-custom-current: #6272a4;
+  --color-custom-selection: #44475a;
+  --color-custom-foreground: #f8f8f2;
+  --color-custom-red: #ff5555;
+  --color-custom-orange: #ffb86c;
+  --color-custom-yellow: #f1fa8c;
+  --color-custom-green: #50fa7b;
+  --color-custom-cyan: #8be9fd;
+  --color-custom-purple: #bd93f9;
+  --color-custom-pink: #ff79c6;
 }

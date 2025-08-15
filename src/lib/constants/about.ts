@@ -9,7 +9,7 @@ export const heading =
   "Currently studying Artificial Intelligence and building dozens of side projects!";
 
 export const description =
-  "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.";
+  "I taught myself to code by creating generative art during high school, then built different applications while studying design at university. Eventually decided to gain a deeper understanding of data structures and algorithms. Lately I've been specializing in machine learning, knowledge representation and reasoning.";
 
 export const links = [
   {
