@@ -15,7 +15,7 @@ export default function Home() {
       w-full
       my-2
 
-      xs:w-1/2
+      xs:max-w-3xl
       xs:mx-auto
       xs:h-screen
       xs:justify-center

@@ -5,7 +5,7 @@ export default function Things({ className }: { className: string }) {
   return (
     <Card className={cn("bg-0", className)}>
       <CardHeader className="text-lg">
-        <CardTitle>You might know me for...</CardTitle>
+        <CardTitle>Relevant things</CardTitle>
       </CardHeader>
       <CardContent className="-mt-4">
         <ul className="text-base list-disc list-inside">
