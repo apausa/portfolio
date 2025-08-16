@@ -18,7 +18,7 @@ export default function Highlights({ className }: { className: string }) {
             <span className="ml-2">
               <a
                 className="text-custom-green no-underline hover:underline"
-                href="httspans://repository.cern/records/f94q8-vhq71"
+                href="https://repository.cern/records/f94q8-vhq71"
                 rel="noreferrer"
                 target="_blank"
               >
