@@ -26,13 +26,13 @@ export default function Home() {
       "
     >
       <div className="grid grid-cols-3 gap-4 p-4">
-        <Header className="order-1 col-span-3" />
-        <Location className="order-8 xs:order-2 col-span-3 xs:col-span-1" />
-        <Spotify className="order-9 xs:order-3 col-span-3 xs:col-span-2 -mt-2 xs:mt-0" />
-        <About className="order-4 col-span-3" />
-        <Links className="order-5 col-span-3 xs:col-span-2" />
-        <Carrousel className="order-6 col-span-3 xs:col-span-1 " />
-        <Highlights className="order-7 col-span-3 xs:col-span-3" />
+        <Header className="col-span-3" />
+        <Location className="col-span-3 xs:col-span-1" />
+        <Spotify className="col-span-3 xs:col-span-2 -mt-2 xs:mt-0" />
+        <About className="col-span-3" />
+        <Links className="col-span-3 xs:col-span-2" />
+        <Carrousel className="col-span-3 xs:col-span-1 " />
+        <Highlights className="col-span-3 xs:col-span-3" />
       </div>
     </div>
   );
