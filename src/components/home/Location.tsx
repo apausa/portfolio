@@ -1,17 +1,17 @@
-import { IconMapPinFilled } from "@tabler/icons-react";
+import { IconWorld } from "@tabler/icons-react";
 
 import { cn } from "@/lib/utils/tailwind";
 
 export default function Location({ className }: { className: string }) {
   return (
     <div
-      className={cn("flex items-center gap-2 text-custom-current", className)}
+      className={cn("flex items-center gap-2 text-custom-purple", className)}
     >
-      <IconMapPinFilled className="w-4 h-4" />
+      <IconWorld className="w-4 h-4" stroke={2} />
       <p>
         Based in{" "}
         <a
-          className="no-underline hover:underline text-custom-green"
+          className="no-underline hover:underline font-bold"
           href="https://maps.app.goo.gl/dUd1mCLUGf1VZNbu5"
           rel="noreferrer"
           target="_blank"

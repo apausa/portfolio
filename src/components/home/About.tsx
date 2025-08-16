@@ -7,7 +7,7 @@ export default function About({ className }: { className: string }) {
     <div className={cn("flex flex-col gap-4", className)}>
       <Separator />
       <div className="flex flex-col gap-2">
-        <h3 className="text-xl font-bold">About me</h3>
+        <h3 className="text-xl font-bold">About Me</h3>
         <p className="text-lg">{description}</p>
       </div>
       <Separator className="mt-auto" />
