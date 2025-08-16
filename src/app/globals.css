@@ -126,7 +126,8 @@
 }
 
 ::selection {
-  background: var(--color-custom-selection);
+  background: var(--color-custom-purple);
+  color: var(--color-custom-background);
 }
 
 @theme {
