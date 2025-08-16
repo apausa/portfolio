@@ -28,9 +28,9 @@ export default function Carrousel({ className }: { className: string }) {
           <CarouselItem className="relative group">
             <Picture src="/about/img1.jpg" />
           </CarouselItem>
-          {/* <CarouselItem className="relative group">
-            <Picture src="/about/img2.jpg" />
-          </CarouselItem> */}
+          <CarouselItem className="relative group">
+            <Picture src="/about/cern.jpg" />
+          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

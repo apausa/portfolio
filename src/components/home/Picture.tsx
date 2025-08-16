@@ -11,6 +11,7 @@ export default function Picture({ src }: { src: string }) {
         className="
               w-full
               h-full
+              object-cover
               grayscale
               group-hover:grayscale-0
               transition-grayscale
