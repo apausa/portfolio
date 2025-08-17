@@ -25,10 +25,10 @@ export default function Carrousel({ className }: { className: string }) {
         ]}
       >
         <CarouselContent>
-          <CarouselItem className="relative group">
+          <CarouselItem className="relative group h-64">
             <Picture src="/about/img1.jpg" />
           </CarouselItem>
-          <CarouselItem className="relative group">
+          <CarouselItem className="relative group h-64">
             <Picture src="/about/cern.jpg" />
           </CarouselItem>
         </CarouselContent>

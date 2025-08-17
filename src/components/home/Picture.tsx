@@ -4,14 +4,10 @@ export default function Picture({ src }: { src: string }) {
   return (
     <>
       <Image
+        fill
         alt="Image 1"
-        height={3024}
         src={src}
-        width={3024}
         className="
-              w-full
-              h-full
-              object-cover
               grayscale
               group-hover:grayscale-0
               transition-grayscale
