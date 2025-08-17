@@ -4,16 +4,11 @@ import { cn } from "@/lib/utils/tailwind";
 export default function Highlights({ className }: { className: string }) {
   return (
     <Card className={cn("bg-0", className)}>
-      <CardHeader className="text-lg">
+      <CardHeader className="font-bold text-lg">
         <CardTitle>Some Highlights</CardTitle>
       </CardHeader>
       <CardContent className="-mt-4">
         <ul className="list-['✦'] list-inside">
-          <li>
-            <span className="ml-2">
-              Wondering what machines dream about in my master&apos;s program.
-            </span>
-          </li>
           <li>
             <span className="ml-2">
               <a
@@ -35,15 +30,7 @@ export default function Highlights({ className }: { className: string }) {
           </li>
           <li>
             <span className="ml-2">
-              <a
-                className="text-custom-green no-underline hover:underline"
-                href="https://x.com/CERN/status/1790679159372423320"
-                rel="noreferrer"
-                target="_blank"
-              >
-                CERN Alumni
-              </a>
-              ,{" "}
+              CERN Alumni,{" "}
               <a
                 className="text-custom-green no-underline hover:underline"
                 href="https://app.novatalent.com/open/certificate/DQV0HEHKGL6710HYNPW4Z1ZBL"
@@ -52,7 +39,12 @@ export default function Highlights({ className }: { className: string }) {
               >
                 Nova
               </a>
-              , indie maker circles, TypeScript and Python languages...
+              , TypeScript and Python languages...
+            </span>
+          </li>
+          <li>
+            <span className="ml-2">
+              Wondering what machines dream about in my master&apos;s program.
             </span>
           </li>
         </ul>
