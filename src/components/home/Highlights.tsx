@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils/tailwind";
 export default function Highlights({ className }: { className: string }) {
   return (
     <Card className={cn("bg-0", className)}>
-      <CardHeader className="font-bold text-lg">
+      <CardHeader className="font-bold">
         <CardTitle>Some Highlights</CardTitle>
       </CardHeader>
       <CardContent className="-mt-4">
