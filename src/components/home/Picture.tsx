@@ -8,6 +8,7 @@ export default function Picture({ src }: { src: string }) {
         alt="Image 1"
         src={src}
         className="
+              object-cover
               grayscale
               group-hover:grayscale-0
               transition-grayscale
