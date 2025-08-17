@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/next";
 import { Montserrat } from "next/font/google";
 
-import P5Sketch from "@/components/home/Background";
+import P5Sketch from "@/components/Background";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 
 import "./globals.css";
