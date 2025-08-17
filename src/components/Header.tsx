@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils/tailwind";
 
 export default function Header({ className }: { className: string }) {
   return (
-    <div className={cn("flex flex-col gap-2", className)}>
+    <section className={cn("flex flex-col gap-2", className)}>
       <h1 className="text-3xl xs:text-4xl font-bold">Pablo Apausa</h1>
       <h2 className="text-xl xs:text-2xl">
         Currently in Artificial Intelligence at Technical University of Madrid
@@ -19,6 +19,6 @@ export default function Header({ className }: { className: string }) {
         </a>
         .
       </h2>
-    </div>
+    </section>
   );
 }
