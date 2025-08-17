@@ -2,11 +2,7 @@ import {
   IconBrandGithubFilled,
   IconBrandLinkedinFilled,
   IconBrandTwitterFilled,
-  IconMailFilled,
 } from "@tabler/icons-react";
-
-export const heading =
-  "Currently in Artificial Intelligence at Technical University of Madrid and working on side projects.";
 
 export const description = [
   "I taught myself to code by creating generative art during high school, then built different applications while studying interaction design at university. This led me to pursue computer science to gain a deeper understanding of data structures and algorithms. Recently I've been specializing in machine learning, knowledge representation and reasoning.",
