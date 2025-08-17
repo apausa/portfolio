@@ -10,13 +10,8 @@ export default function Portfolio() {
       px-4
       pt-4
       pb-8
+      bg-input/25
       "
-    >
-      <Card className="bg-input/25 h-full">
-        <CardHeader>
-          <CardTitle className="text-xl">Portfolio</CardTitle>
-        </CardHeader>
-      </Card>
-    </div>
+    />
   );
 }
