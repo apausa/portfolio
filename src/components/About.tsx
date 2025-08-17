@@ -1,4 +1,3 @@
-import { Separator } from "@/components/ui/separator";
 import { description } from "@/lib/constants/about";
 import { cn } from "@/lib/utils/tailwind";
 
