@@ -1,4 +1,5 @@
 import {
+  IconBookmarkFilled,
   IconBrandGithubFilled,
   IconBrandLinkedinFilled,
   IconBrandTwitterFilled,
@@ -23,5 +24,10 @@ export const links = [
     name: "Twitter",
     href: "https://x.com/pablu",
     icon: IconBrandTwitterFilled,
+  },
+  {
+    name: "Substack",
+    href: "https://substack.com/@pablu",
+    icon: IconBookmarkFilled,
   },
 ];
