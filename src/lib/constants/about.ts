@@ -25,9 +25,4 @@ export const links = [
     href: "https://x.com/pablu",
     icon: IconBrandTwitterFilled,
   },
-  {
-    name: "Substack",
-    href: "https://substack.com/@pablu",
-    icon: IconBookmarkFilled,
-  },
 ];
