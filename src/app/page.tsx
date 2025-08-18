@@ -18,17 +18,17 @@ export default function Home() {
     <main
       className="
       w-full
-      xs:w-1/2
-      h-dvh
+      xs:max-w-4xl
+      xs:h-dvh
       flex
       flex-col
       justify-between
       "
     >
-      <div className="grid grid-cols-6 gap-4 m-4 xs:m-12">
+      <div className="grid grid-cols-6 gap-4 mx-4 xs:mx-12 mt-12">
         <Header className="col-span-6 xs:col-span-6" />
         <Contact className="col-span-6 xs:col-span-2" />
-        <Spotify className="col-span-6 xs:col-span-4 -mt-2 xs:mt-0" />
+        <Spotify className="col-span-6 xs:col-span-4 -mt-2" />
         <Separator className="col-span-6" />
 
         <About className="col-span-6" />
@@ -38,7 +38,7 @@ export default function Home() {
           <Button
             key={link.name}
             asChild
-            className="col-span-6 xs:col-span-3"
+            className="col-span-6 xs:col-span-2 h-12"
             variant="outline"
           >
             <Link href={link.href} target="_blank">
@@ -50,9 +50,9 @@ export default function Home() {
         <Highlights className="col-span-6 xs:col-span-6" />
       </div>
 
-      <div className="grid grid-cols-6 gap-4 m-4 xs:m-12">
-        <Place className="col-span-6" />
-        <Time className="col-span-6 -mt-2" />
+      <div className="grid grid-cols-6 gap-4 mx-4 xs:mx-12 mb-16 mt-4 xs:mt-0">
+        <Place className="col-span-6 xs:col-span-2" />
+        <Time className="col-span-6 xs:col-span-4 -mt-2" />
       </div>
     </main>
   );

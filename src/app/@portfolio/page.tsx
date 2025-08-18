@@ -2,10 +2,9 @@ export default function Portfolio() {
   return (
     <aside
       className="
-      w-full
-      xs:w-1/2
       overflow-scroll
       bg-input/25
+      w-full
       "
     >
       <div className="flex flex-col m-4 xs:m-12">
