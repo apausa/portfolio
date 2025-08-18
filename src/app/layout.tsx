@@ -47,6 +47,7 @@ export default function RootLayout({
           <Analytics />
           <P5Sketch />
           {children}
+          {portfolio}
         </ThemeProvider>
       </body>
     </html>
