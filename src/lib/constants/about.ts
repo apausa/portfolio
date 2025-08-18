@@ -6,7 +6,8 @@ import {
 } from "@tabler/icons-react";
 
 export const description = [
-  "I taught myself to code by creating generative art during high school, then built different applications while studying interaction design at university. This led me to pursue computer science to gain a deeper understanding of data structures and algorithms. Recently I've been specializing in machine learning, knowledge representation and reasoning.",
+  "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+  "Lurem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
 ];
 
 export const links = [
@@ -22,7 +23,7 @@ export const links = [
   },
   {
     name: "Twitter",
-    href: "https://x.com/pablu",
+    href: "",
     icon: IconBrandTwitterFilled,
   },
   {
