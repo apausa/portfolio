@@ -20,12 +20,13 @@ export default function Home() {
       w-full
       xs:max-w-4xl
       xs:h-dvh
+      xs:mx-auto
       flex
       flex-col
       justify-between
       "
     >
-      <div className="grid grid-cols-6 gap-4 mx-4 xs:mx-12 mt-12">
+      <div className="grid grid-cols-6 gap-4 mx-4 xs:mx-12 mt-8 xs:mt-12">
         <Header className="col-span-6 xs:col-span-6" />
         <Contact className="col-span-6 xs:col-span-2" />
         <Spotify className="col-span-6 xs:col-span-4 -mt-2" />
@@ -38,7 +39,7 @@ export default function Home() {
           <Button
             key={link.name}
             asChild
-            className="col-span-6 xs:col-span-2 h-12"
+            className="col-span-6 xs:col-span-3"
             variant="outline"
           >
             <Link href={link.href} target="_blank">
