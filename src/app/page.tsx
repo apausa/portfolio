@@ -9,7 +9,6 @@ import Time from "@/components/home/tags/Time";
 import Title from "@/components/home/Title";
 import Highlights from "@/components/portfolio/Highlights";
 import { Separator } from "@/components/ui/separator";
-import Picture from "@/lib/unused/Picture";
 
 export default function Home() {
   return (
