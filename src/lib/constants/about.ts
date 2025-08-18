@@ -26,7 +26,7 @@ export const links = [
     icon: IconBrandTwitterFilled,
   },
   {
-    name: "Substack",
+    name: "Writing",
     href: "",
     icon: IconBookmarkFilled,
   },
