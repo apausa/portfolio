@@ -35,8 +35,8 @@ export default function Home() {
           <Separator className="col-span-6" />
           <About className="col-span-6" />
           <Separator className="col-span-6" />
-          <Links className="col-span-6" />
-          {/* <Carrousel className="col-span-6 xs:col-span-2" /> */}
+          <Links className="col-span-6  xs:col-span-4" />
+          <Carrousel className="col-span-6 xs:col-span-2" />
         </div>
         <div className="grid grid-cols-6 gap-4">
           <Spotify className="col-span-6 " />
