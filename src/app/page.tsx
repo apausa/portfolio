@@ -1,7 +1,6 @@
 "use client";
 
 import About from "@/components/home/About";
-import Carrousel from "@/components/home/carrousel/Carrousel";
 import Links from "@/components/home/Links";
 import Contact from "@/components/home/tags/Contact";
 import Place from "@/components/home/tags/Place";
@@ -10,6 +9,7 @@ import Time from "@/components/home/tags/Time";
 import Title from "@/components/home/Title";
 import Highlights from "@/components/portfolio/Highlights";
 import { Separator } from "@/components/ui/separator";
+import Picture from "@/lib/unused/Picture";
 
 export default function Home() {
   return (
@@ -29,21 +29,20 @@ export default function Home() {
         "
       >
         <div className="grid grid-cols-6 gap-4">
-          <Title className="col-span-6 xs:col-span-6" />
+          <Title className="col-span-6" />
           <Contact className="col-span-6 xs:col-span-2" />
           <Place className="col-span-6 xs:col-span-4 -mt-2" />
           <Separator className="col-span-6" />
           <About className="col-span-6" />
           <Separator className="col-span-6" />
-          <Links className="col-span-6  xs:col-span-4" />
-          <Carrousel className="col-span-6 xs:col-span-2" />
+          <Links className="col-span-6" />
         </div>
         <div className="grid grid-cols-6 gap-4">
           <Spotify className="col-span-6 " />
           <Time className="col-span-6 -mt-2" />
         </div>
       </main>
-      <aside
+      {/* <aside
         className="
         w-full
         xs:flex-1
@@ -61,7 +60,7 @@ export default function Home() {
       >
         <Highlights />
         <h3 className="text-xl font-bold">Links to my work</h3>
-      </aside>
+      </aside> */}
     </div>
   );
 }
