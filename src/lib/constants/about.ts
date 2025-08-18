@@ -12,17 +12,17 @@ export const description = [
 
 export const links = [
   {
-    name: "Experience",
+    name: "LinkedIn",
     href: "https://www.linkedin.com/in/apausa/",
     icon: IconBrandLinkedinFilled,
   },
   {
-    name: "Projects",
+    name: "Github",
     href: "https://github.com/apausa",
     icon: IconBrandGithubFilled,
   },
   {
-    name: "Writing",
+    name: "Substack",
     href: "",
     icon: IconBookmarkFilled,
   },
