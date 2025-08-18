@@ -11,7 +11,7 @@ export default function Links({ className }: { className: string }) {
         <Button
           key={link.name}
           asChild
-          className="col-span-6 xs:col-span-3"
+          className="col-span-6"
           size="lg"
           variant="outline"
         >

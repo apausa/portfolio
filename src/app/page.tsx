@@ -8,6 +8,7 @@ import Place from "@/components/home/tags/Place";
 import Spotify from "@/components/home/tags/Spotify";
 import Time from "@/components/home/tags/Time";
 import Title from "@/components/home/Title";
+import Highlights from "@/components/portfolio/Highlights";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
@@ -19,11 +20,10 @@ export default function Home() {
         xs:w-4xl
         flex
         flex-col
-
         xs:justify-between
         p-4
         pt-12
-        pb-16
+        pb-8
         xs:p-16
         gap-4
         "
@@ -35,31 +35,33 @@ export default function Home() {
           <Separator className="col-span-6" />
           <About className="col-span-6" />
           <Separator className="col-span-6" />
-          <Links className="col-span-6" />
-          {/* <Carrousel className="col-span-6 xs:col-span-2" /> */}
+          <Links className="col-span-6  xs:col-span-4" />
+          <Carrousel className="col-span-6 xs:col-span-2" />
         </div>
         <div className="grid grid-cols-6 gap-4">
           <Spotify className="col-span-6 " />
           <Time className="col-span-6 -mt-2" />
         </div>
       </main>
-      {/* <aside
+      <aside
         className="
         w-full
         xs:flex-1
         flex
         flex-col
-
         p-4
+        pt-8
+        pb-16
         xs:p-16
-        gap-4
+        xs:pl-8
+        gap-8
         overflow-y-auto
-
         bg-custom-selection/30
       "
       >
-        <h3 className="text-md xs:text-lg font-bold" />
-      </aside> */}
+        <Highlights />
+        <h3 className="text-xl font-bold">Links to my work</h3>
+      </aside>
     </div>
   );
 }
