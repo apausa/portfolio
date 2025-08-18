@@ -8,7 +8,7 @@ export default function Links({ className }: { className: string }) {
   return (
     <section className={cn("flex flex-col gap-4", className)}>
       {links.map((link) => (
-        <Button key={link.name} asChild className="h-12" variant="outline">
+        <Button key={link.name} asChild size="lg" variant="outline">
           <Link href={link.href} target="_blank">
             <link.icon />
             {link.name}

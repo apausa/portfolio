@@ -38,8 +38,8 @@ export default function Home() {
           <Carrousel className="col-span-6 xs:col-span-2" />
         </div>
         <div className="grid grid-cols-6 gap-4">
-          <Place className="col-span-6 xs:col-span-2" />
-          <Time className="col-span-6 xs:col-span-4 -mt-2" />
+          <Place className="col-span-6" />
+          <Time className="col-span-6 -mt-2" />
         </div>
       </main>
       <aside
@@ -54,10 +54,11 @@ export default function Home() {
         gap-4
         overflow-y-auto
 
-        bg-blue-500
+        bg-custom-selection/30
       "
       >
-        <Highlights />
+        <h3 className="text-md xs:text-lg font-bold">Portfolio</h3>
+        <p>Work in progress</p>
       </aside>
     </div>
   );

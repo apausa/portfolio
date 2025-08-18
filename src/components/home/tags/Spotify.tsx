@@ -22,7 +22,7 @@ export default function Spotify({ className }: { className: string }) {
   }, []);
 
   return (
-    <div className={cn("flex items-center gap-2 text-blue-500", className)}>
+    <div className={cn("flex items-center gap-2 text-custom-green", className)}>
       <IconBrandSpotifyFilled className="w-4" />
       <p>
         Last played →{" "}
