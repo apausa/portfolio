@@ -22,14 +22,7 @@ export default function Time({ className }: { className: string }) {
 
   // Show placeholder until hydrated to avoid mismatch
   if (!time) {
-    return (
-      <div
-        className={cn("flex items-center gap-2 text-custom-current", className)}
-      >
-        <IconClockFilled className="w-4 h-4" />
-        <p className="opacity-0">Loading...</p>
-      </div>
-    );
+    return <div />;
   }
 
   const day = time.getDate();
@@ -46,9 +39,7 @@ export default function Time({ className }: { className: string }) {
     .join("");
 
   return (
-    <div
-      className={cn("flex items-center gap-2 text-custom-current", className)}
-    >
+    <div className={cn("flex items-center gap-2", className)}>
       <IconClockFilled className="w-4 h-4" />
       <p>
         {month} {day}, {year} {hours}:{minutes}:{seconds} at {timezone}

@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --breakpoint-xs: 34rem; /* 512 + 32px margin */
+  --breakpoint-xs: 48rem;
 }
 
 @theme inline {

@@ -1,22 +1,18 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-
 export default function Portfolio() {
   return (
-    <div
+    <aside
       className="
-      w-full
-      xs:w-1/2
-      h-dvh
-      px-4
-      pt-4
-      pb-8
+      bg-input/25
+      flex-1
       "
     >
-      <Card className="bg-input/25 h-full">
-        <CardHeader>
-          <CardTitle className="text-xl">Portfolio</CardTitle>
-        </CardHeader>
-      </Card>
-    </div>
+      <div className="flex flex-col mx-4 mt-8 mb-12 xs:m-12">
+        <h3 className="text-xl font-bold">Portfolio</h3>
+        <p className="pt-4">
+          Work in progress as of August, come back in September!
+        </p>
+        <p>I am currently working on the responsiveness of this website.</p>
+      </div>
+    </aside>
   );
 }

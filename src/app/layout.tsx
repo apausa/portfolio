@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/next";
 import { Montserrat } from "next/font/google";
 
-import P5Sketch from "@/components/home/Background";
+import P5Sketch from "@/components/Background";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 
 import "./globals.css";
@@ -34,7 +34,7 @@ export default function RootLayout({
           flex
           flex-col
           xs:flex-row
-        bg-custom-background
+          bg-custom-background
           `}
       >
         <ThemeProvider
@@ -47,6 +47,7 @@ export default function RootLayout({
           <Analytics />
           <P5Sketch />
           {children}
+          {portfolio}
         </ThemeProvider>
       </body>
     </html>
