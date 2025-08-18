@@ -20,22 +20,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  portfolio,
 }: Readonly<{
   children: React.ReactNode;
-  portfolio: React.ReactNode;
 }>) {
   return (
     <html suppressHydrationWarning data-theme="light" lang="en">
       <body
-        className={`
-          ${montserrat.variable}
-          antialiased
-          flex
-          flex-col
-          xs:flex-row
-          bg-custom-background
-          `}
+        className={`${montserrat.variable} antialiased bg-custom-background`}
       >
         <ThemeProvider
           disableTransitionOnChange
@@ -47,7 +38,6 @@ export default function RootLayout({
           <Analytics />
           <P5Sketch />
           {children}
-          {portfolio}
         </ThemeProvider>
       </body>
     </html>

@@ -1,60 +1,65 @@
 "use client";
 
-import Link from "next/link";
-
-import About from "@/components/About";
-import Header from "@/components/Header";
-import Highlights from "@/components/Highlights";
-import Contact from "@/components/metadata/Contact";
-import Place from "@/components/metadata/Place";
-import Spotify from "@/components/metadata/Spotify";
-import Time from "@/components/metadata/Time";
-import { Button } from "@/components/ui/button";
+import About from "@/components/home/About";
+import Carrousel from "@/components/home/carrousel/Carrousel";
+import Links from "@/components/home/Links";
+import Contact from "@/components/home/tags/Contact";
+import Place from "@/components/home/tags/Place";
+import Spotify from "@/components/home/tags/Spotify";
+import Time from "@/components/home/tags/Time";
+import Title from "@/components/home/Title";
+import Highlights from "@/components/portfolio/Highlights";
 import { Separator } from "@/components/ui/separator";
-import { links } from "@/lib/constants/about";
 
 export default function Home() {
   return (
-    <main
-      className="
-      w-full
-      xs:max-w-4xl
-      xs:h-dvh
-      xs:mx-auto
-      flex
-      flex-col
-      justify-between
+    <div className="flex flex-col xs:flex-row xs:h-dvh overflow-hidden">
+      <main
+        className="
+        w-full
+        xs:w-4xl
+        flex
+        flex-col
+
+        xs:justify-between
+        p-4
+        xs:p-16
+        gap-4
+        "
+      >
+        <div className="grid grid-cols-6 gap-4">
+          <Title className="col-span-6 xs:col-span-6" />
+          <Contact className="col-span-6 xs:col-span-2" />
+          <Spotify className="col-span-6 xs:col-span-4 -mt-2" />
+          <Separator className="col-span-6" />
+          <About className="col-span-6" />
+          <Separator className="col-span-6" />
+          <Links className="col-span-6 xs:col-span-4" />
+          <Carrousel className="col-span-6 xs:col-span-2" />
+        </div>
+        <div className="grid grid-cols-6 gap-4">
+          <Place className="col-span-6" />
+          <Time className="col-span-6 -mt-2" />
+        </div>
+      </main>
+      <aside
+        className="
+        w-full
+        xs:flex-1
+        flex
+        flex-col
+
+        p-4
+        xs:p-16
+        gap-4
+        overflow-y-auto
+
+        bg-custom-selection/30
       "
-    >
-      <div className="grid grid-cols-6 gap-4 mx-4 xs:mx-12 mt-8 xs:mt-12">
-        <Header className="col-span-6 xs:col-span-6" />
-        <Contact className="col-span-6 xs:col-span-2" />
-        <Spotify className="col-span-6 xs:col-span-4 -mt-2" />
-        <Separator className="col-span-6" />
-
-        <About className="col-span-6" />
-        <Separator className="col-span-6" />
-
-        {links.map((link) => (
-          <Button
-            key={link.name}
-            asChild
-            className="col-span-6 xs:col-span-3"
-            variant="outline"
-          >
-            <Link href={link.href} target="_blank">
-              <link.icon />
-              {link.name}
-            </Link>
-          </Button>
-        ))}
-        <Highlights className="col-span-6 xs:col-span-6" />
-      </div>
-
-      <div className="grid grid-cols-6 gap-4 mx-4 xs:mx-12 mb-16 mt-4 xs:mt-0">
-        <Place className="col-span-6 xs:col-span-2" />
-        <Time className="col-span-6 xs:col-span-4 -mt-2" />
-      </div>
-    </main>
+      >
+        <h3 className="text-md xs:text-lg font-bold">Portfolio</h3>
+        <p>Work in progress</p>
+      </aside>
+    </div>
   );
 }
