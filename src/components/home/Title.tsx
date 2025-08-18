@@ -8,7 +8,7 @@ export default function Title({ className }: { className: string }) {
       <h1 className="text-3xl xs:text-4xl font-bold">Pablo Apausa</h1>
       <h2 className="text-xl xs:text-2xl">
         Software Engineer and Designer — Artificial Intelligence at Technical
-        University of Madrid
+        University of Madrid [WORK IN PROGRESS]
       </h2>
     </section>
   );

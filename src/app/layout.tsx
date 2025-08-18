@@ -25,9 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning data-theme="light" lang="en">
-      <body
-        className={`${montserrat.variable} antialiased bg-custom-background`}
-      >
+      <body className={`${montserrat.variable} antialiased`}>
         <ThemeProvider
           disableTransitionOnChange
           attribute="class"
@@ -36,7 +34,7 @@ export default function RootLayout({
           forcedTheme="dark"
         >
           <Analytics />
-          <P5Sketch />
+          {/* <P5Sketch /> */}
           {children}
         </ThemeProvider>
       </body>

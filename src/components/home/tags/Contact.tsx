@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils/tailwind";
 
 export default function Contact({ className }: { className: string }) {
   return (
-    <div className={cn("flex items-center gap-2 text-custom-green", className)}>
+    <div className={cn("flex items-center gap-2 text-blue-500", className)}>
       <IconMailFilled className="w-4 h-4" />
       <p>pablo[at]apausa[dot]dev</p>
     </div>
