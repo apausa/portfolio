@@ -33,7 +33,7 @@ export default function Highlights() {
             >
               Nova
             </a>
-            , TypeScript and Python languages...
+            , open source, build in public circles...
           </span>
         </li>
         <li>

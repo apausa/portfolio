@@ -8,6 +8,7 @@ import Place from "@/components/home/tags/Place";
 import Spotify from "@/components/home/tags/Spotify";
 import Time from "@/components/home/tags/Time";
 import Title from "@/components/home/Title";
+import Highlights from "@/components/portfolio/Highlights";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
@@ -43,7 +44,7 @@ export default function Home() {
           <Time className="col-span-6 -mt-2" />
         </div>
       </main>
-      {/* <aside
+      <aside
         className="
         w-full
         xs:flex-1
@@ -58,8 +59,8 @@ export default function Home() {
         bg-custom-selection/30
       "
       >
-        <h3 className="text-md xs:text-lg font-bold" />
-      </aside> */}
+        <Highlights />
+      </aside>
     </div>
   );
 }
