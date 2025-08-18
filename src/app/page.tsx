@@ -20,11 +20,10 @@ export default function Home() {
         xs:w-4xl
         flex
         flex-col
-
         xs:justify-between
         p-4
         pt-12
-        pb-16
+        pb-8
         xs:p-16
         gap-4
         "
@@ -50,16 +49,18 @@ export default function Home() {
         xs:flex-1
         flex
         flex-col
-
         p-4
+        pt-8
+        pb-16
         xs:p-16
-        gap-4
+        xs:pl-8
+        gap-8
         overflow-y-auto
-
         bg-custom-selection/30
       "
       >
         <Highlights />
+        <h3 className="text-xl font-bold">Links to my work</h3>
       </aside>
     </div>
   );
