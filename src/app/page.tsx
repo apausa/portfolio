@@ -67,10 +67,12 @@ export default function Home() {
         xs:border-l
       "
       >
-        <div className="grid grid-cols-6 gap-8">
-          <Education className="col-span-6" />
+        <div className="grid grid-cols-6 gap-4">
+          {/* <Education className="col-span-6" />
+          <Separator className="col-span-6" />
           <Experience className="col-span-6" />
-          <Projects className="col-span-6" />
+          <Separator className="col-span-6" />
+          <Projects className="col-span-6" /> */}
           <Carrousel
             className="
               col-span-6
