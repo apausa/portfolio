@@ -39,10 +39,10 @@ export default function Time({ className }: { className: string }) {
     .join("");
 
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("flex items-center gap-2 ", className)}>
       <IconClockFilled className="w-4 h-4 flex-shrink-0" />
       <p className="min-w-0 break-words">
-        {month} {day}, {year} {hours}:{minutes}:{seconds} at {timezone}
+        {month} {day}, {year} • {hours}:{minutes}:{seconds} at {timezone}
       </p>
     </div>
   );
