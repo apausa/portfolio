@@ -68,8 +68,9 @@ export default function Home() {
       "
       >
         <div className="grid grid-cols-6 gap-8">
-          {/* <Experience className="col-span-6" />
-          <Projects className="col-span-6" /> */}
+          <Education className="col-span-6" />
+          <Experience className="col-span-6" />
+          <Projects className="col-span-6" />
           <Carrousel
             className="
               col-span-6
