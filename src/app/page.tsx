@@ -63,8 +63,7 @@ export default function Home() {
         xs:pl-8
         gap-8
         overflow-y-auto
-        bg-input/30
-        xs:border-l
+        bg-0
       "
       >
         <div className="grid grid-cols-6 gap-4">
