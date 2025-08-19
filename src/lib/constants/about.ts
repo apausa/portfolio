@@ -20,9 +20,4 @@ export const links = [
     href: "https://github.com/apausa",
     icon: IconBrandGithubFilled,
   },
-  {
-    name: "Substack",
-    href: "",
-    icon: IconBookmarkFilled,
-  },
 ];
