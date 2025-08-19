@@ -10,9 +10,9 @@ export default function Picture({ src }: { src: string }) {
         className="
               object-cover
               h-full
-              grayscale
-              group-hover:grayscale-0
-              transition-grayscale
+              saturate-0
+              group-hover:saturate-100
+              transition-saturate
               duration-500
               "
       />

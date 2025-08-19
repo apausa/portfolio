@@ -18,7 +18,7 @@ import { ModeToggle } from "@/components/ui/toggle";
 export default function Home() {
   return (
     <div className="relative flex flex-col xs:flex-row xs:h-dvh overflow-hidden">
-      <div className="absolute right-8 top-8">
+      <div className="absolute right-4 top-4 xs:right-16 xs:top-16">
         <ModeToggle />
       </div>
       <main
@@ -63,12 +63,14 @@ export default function Home() {
         xs:pl-8
         gap-8
         overflow-y-auto
-        bg-input/30
-        xs:border-l
+        bg-0
       "
       >
-        <div className="grid grid-cols-6 gap-8">
-          {/* <Experience className="col-span-6" />
+        <div className="grid grid-cols-6 gap-4">
+          {/* <Education className="col-span-6" />
+          <Separator className="col-span-6" />
+          <Experience className="col-span-6" />
+          <Separator className="col-span-6" />
           <Projects className="col-span-6" /> */}
           <Carrousel
             className="
