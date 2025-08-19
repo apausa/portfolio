@@ -13,13 +13,13 @@ export default function Highlights({ className }: { className: string }) {
           <li>
             <span className="ml-2">
               <a
-                className="text-custom-green no-underline hover:underline"
+                className="text-custom-red dark:text-custom-green no-underline hover:underline"
                 href="https://repository.cern/records/f94q8-vhq71"
                 rel="noreferrer"
                 target="_blank"
               >
-                Building a simulations dashboard for ALICE researchers to manage
-                Monte Carlo methods.
+                Developing a simulations dashboard for ALICE researchers to
+                manage Monte Carlo methods.
               </a>
             </span>
           </li>
@@ -33,7 +33,7 @@ export default function Highlights({ className }: { className: string }) {
             <span className="ml-2">
               CERN Alumni,{" "}
               <a
-                className="text-custom-green no-underline hover:underline"
+                className="text-custom-red dark:text-custom-green no-underline hover:underline"
                 href="https://app.novatalent.com/open/certificate/DQV0HEHKGL6710HYNPW4Z1ZBL"
                 rel="noreferrer"
                 target="_blank"

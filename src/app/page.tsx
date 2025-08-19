@@ -1,6 +1,7 @@
 "use client";
 
 import About from "@/components/home/About";
+import Carrousel from "@/components/home/carrousel/Carrousel";
 import Links from "@/components/home/Links";
 import Contact from "@/components/home/tags/Contact";
 import Place from "@/components/home/tags/Place";
@@ -9,10 +10,14 @@ import Time from "@/components/home/tags/Time";
 import Title from "@/components/home/Title";
 import Highlights from "@/components/portfolio/Highlights";
 import { Separator } from "@/components/ui/separator";
+import { ModeToggle } from "@/components/ui/toggle";
 
 export default function Home() {
   return (
-    <div className="flex flex-col xs:flex-row xs:h-dvh overflow-hidden">
+    <div className="relative flex flex-col xs:flex-row xs:h-dvh overflow-hidden">
+      <div className="absolute right-4 top-12 xs:top-16 xs:right-16">
+        <ModeToggle />
+      </div>
       <main
         className="
         w-full
@@ -30,19 +35,19 @@ export default function Home() {
         <div className="grid grid-cols-6 gap-4">
           <Title className="col-span-6" />
           <Contact className="col-span-6 xs:col-span-2" />
-          <Spotify className="col-span-6 xs:col-span-4 -mt-2 xs:mt-0 " />
+          <Place className="col-span-6 xs:col-span-4 -mt-2 xs:mt-0 " />
           <Separator className="col-span-6" />
           <About className="col-span-6" />
           <Separator className="col-span-6" />
           <Links className="col-span-6" />
-          <Highlights className="col-span-6" />
+          <Highlights className="col-span-6 xs:col-span-6" />
         </div>
         <div className="grid grid-cols-6 gap-4">
-          <Place className="col-span-6" />
+          <Spotify className="col-span-6" />
           <Time className="col-span-6 -mt-2" />
         </div>
       </main>
-      {/* <aside
+      <aside
         className="
         w-full
         xs:flex-1
@@ -59,13 +64,11 @@ export default function Home() {
         xs:border-l
       "
       >
-        <h3>If you are looking for more information about:</h3>
-        <ul className="list-disc list-inside">
-          <li>Education, experience and misc. → LinkedIn</li>
-          <li>Personal projects → GitHub</li>
-          <li>Writing → Substack </li>
-        </ul>
-      </aside> */}
+        <div className="flex-1" />
+        <div className="grid grid-cols-6 gap-4">
+          <Carrousel className="col-span-6 xs:col-span-2 xs:col-start-5" />
+        </div>
+      </aside>
     </div>
   );
 }
