@@ -1,8 +1,10 @@
+import { cn } from "@/lib/utils/tailwind";
+
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
-export default function Highlights() {
+export default function Highlights({ className }: { className: string }) {
   return (
-    <Card className="flex flex-col gap-2 bg-0">
+    <Card className={cn("flex flex-col gap-2 bg-0", className)}>
       <CardHeader className="font-bold">
         <CardTitle>Some Highlights</CardTitle>
       </CardHeader>
@@ -38,7 +40,7 @@ export default function Highlights() {
               >
                 Nova
               </a>
-              , open source, build in public circles...
+              , creative coding, &apos;build in public&apos; circles...
             </span>
           </li>
           <li>
