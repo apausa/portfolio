@@ -26,14 +26,19 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning data-theme="light" lang="en">
       <body
-        className={`${montserrat.variable} antialiased bg-custom-background`}
+        className={`
+          ${montserrat.variable}
+          antialiased
+          bg-custom-foreground
+          text-custom-background
+          dark:bg-custom-background
+          dark:text-custom-foreground
+        `}
       >
         <ThemeProvider
           disableTransitionOnChange
           attribute="class"
           defaultTheme="dark"
-          enableSystem={false}
-          forcedTheme="dark"
         >
           <Analytics />
           <P5Sketch />
