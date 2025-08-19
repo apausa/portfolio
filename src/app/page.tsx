@@ -30,14 +30,15 @@ export default function Home() {
         <div className="grid grid-cols-6 gap-4">
           <Title className="col-span-6" />
           <Contact className="col-span-6 xs:col-span-2" />
-          <Place className="col-span-6 xs:col-span-4 -mt-2 xs:mt-0" />
+          <Spotify className="col-span-6 xs:col-span-4 -mt-2 xs:mt-0 " />
           <Separator className="col-span-6" />
           <About className="col-span-6" />
           <Separator className="col-span-6" />
           <Links className="col-span-6" />
+          <Highlights className="col-span-6" />
         </div>
         <div className="grid grid-cols-6 gap-4">
-          <Spotify className="col-span-6 " />
+          <Place className="col-span-6" />
           <Time className="col-span-6 -mt-2" />
         </div>
       </main>
@@ -55,10 +56,15 @@ export default function Home() {
         gap-8
         overflow-y-auto
         bg-custom-selection/30
+        xs:border-l
       "
       >
-        <Highlights />
-        <h3 className="text-xl font-bold">Links to my work</h3>
+        <h3>If you are looking for more information about:</h3>
+        <ul className="list-disc list-inside">
+          <li>Education, experience and misc. → LinkedIn</li>
+          <li>Personal projects → GitHub</li>
+          <li>Writing → Substack </li>
+        </ul>
       </aside> */}
     </div>
   );
