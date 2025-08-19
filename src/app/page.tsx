@@ -30,7 +30,7 @@ export default function Home() {
         <div className="grid grid-cols-6 gap-4">
           <Title className="col-span-6" />
           <Contact className="col-span-6 xs:col-span-2" />
-          <Place className="col-span-6 xs:col-span-4 -mt-2" />
+          <Place className="col-span-6 xs:col-span-4 -mt-2 xs:mt-0" />
           <Separator className="col-span-6" />
           <About className="col-span-6" />
           <Separator className="col-span-6" />
