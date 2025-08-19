@@ -18,7 +18,7 @@ import { ModeToggle } from "@/components/ui/toggle";
 export default function Home() {
   return (
     <div className="relative flex flex-col xs:flex-row xs:h-dvh overflow-hidden">
-      <div className="absolute right-8 top-8">
+      <div className="absolute right-4 top-4 xs:right-16 xs:top-16">
         <ModeToggle />
       </div>
       <main
