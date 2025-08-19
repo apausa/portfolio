@@ -1,6 +1,8 @@
-export default function Writing() {
+import { cn } from "@/lib/utils/tailwind";
+
+export default function Writing({ className }: { className: string }) {
   return (
-    <article className="flex flex-col gap-4">
+    <article className={cn("flex flex-col gap-4", className)}>
       <h3 className="font-bold">Projects</h3>
       <ul className="flex flex-col gap-4">
         <li>
