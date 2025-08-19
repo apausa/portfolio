@@ -6,8 +6,8 @@ import {
 } from "@tabler/icons-react";
 
 export const description = [
-  "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
-  "Lurem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+  "I discovered coding through generative art during high school, then built web and mobile apps while studying design at university. This led me to pursue computer science to deepen my understanding of theoretical foundations, such as data structures and algorithms. I now specialize in machine learning and its applications.",
+  "With this interdisciplinary background spanning human-computer interaction to software engineering, I approach challenges with a holistic perspective",
 ];
 
 export const links = [

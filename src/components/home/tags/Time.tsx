@@ -40,8 +40,8 @@ export default function Time({ className }: { className: string }) {
 
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <IconClockFilled className="w-4 h-4" />
-      <p>
+      <IconClockFilled className="w-4 h-4 flex-shrink-0" />
+      <p className="min-w-0 break-words">
         {month} {day}, {year} {hours}:{minutes}:{seconds} at {timezone}
       </p>
     </div>
